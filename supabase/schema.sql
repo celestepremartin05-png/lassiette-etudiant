@@ -34,3 +34,8 @@ alter table public.sessions enable row level security;
 
 -- Double sécurité : aucun droit pour les clés publiques.
 revoke all on public.users, public.sessions from anon, authenticated;
+
+-- Les projets Supabase récents ne donnent plus ces droits automatiquement :
+-- la clé secrète (rôle service_role) doit pouvoir lire et écrire ces tables.
+grant usage on schema public to service_role;
+grant select, insert, update, delete on public.users, public.sessions to service_role;
