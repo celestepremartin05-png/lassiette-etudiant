@@ -1,0 +1,11 @@
+{
+  "name": "lassiette-etudiant",
+  "private": true,
+  "description": "L'Assiette de l'étudiant : site statique + fonctions serveur pour les comptes (bcrypt + Resend, Supabase comme base de données).",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
+}
